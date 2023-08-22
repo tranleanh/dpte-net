@@ -1,4 +1,4 @@
-# DPTE-Net: Distilled Pooling Transformer Encoder for Efficient Image Dehazing
+# DPTE-Net
 
 
 LA Tran
