@@ -1,0 +1,28 @@
+
+I. To test dehazing:
+
+    - Step 1: Set up environment & install core packages
+
+        conda create -n dpteenv python=3.7
+        conda activate dpteenv
+        bash install_core_env.sh
+
+    - Step 2: Run test
+
+        python dehaze.py
+ 
+    - Step 3: Evaluate PSNR & SSIM
+
+        python eval_psnr_ssim.py
+
+
+
+II. To test model complexity:
+
+    - Step 1: Install keras-flops
+
+        pip install keras-flops
+
+    - Step 2: Evaluate model complexity
+
+        python eval_computation.py
