@@ -4,7 +4,7 @@ The official implementation of the paper "Distilled Pooling Transformer Encoder 
 
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
 
-Journal: Neural Computing and Applications (Springer)
+Journal: [Neural Computing and Applications](https://link.springer.com/journal/521) (Springer)
 
 ## Introduction
 
