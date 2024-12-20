@@ -484,8 +484,7 @@ def load_images_with_crop_flip_data_aug_and_hint(path, n_images):
 
     print('\n Loading teacher network:')
     teacher_model = EDN_GTM()
-    # weight_path = 'core/teacher_weights/ihaze_generator_in512_ep_185_loss26.h5'
-    weight_path = '/mnt/data5/tranleanh/dehazing/edn-gtm-small_3_hint/core/teacher_weights/ihaze_generator_in512_ep_185_loss26.h5'
+    weight_path = 'path/to/teacher_weights'
     teacher_model.load_weights(weight_path)
     print('-> Loading teacher network: Done.')
 
@@ -505,14 +504,6 @@ def load_images_with_crop_flip_data_aug_and_hint(path, n_images):
         img_B = cv2.resize(img_B, RESHAPE)
 
         processed_imgs_A, processed_imgs_B, generated_hints, soft_labels = preprocess_image_cv2_rancrop_flip_make_hint(img_A, img_B, teacher_model)
-
-        # soft_labels_arr = np.array(soft_labels)
-        # print(soft_labels_arr.shape)
-        # for s, soft_label in enumerate(soft_labels):
-        #     de_test = deprocess_image(soft_label)
-        #     de_test = np.reshape(de_test, (img_size,img_size,3))
-        #     rgb_de_test = cv2.cvtColor(de_test, cv2.COLOR_BGR2RGB)
-        #     cv2.imwrite('soft_labels/'+str(cnt)+str(s)+'.jpg', rgb_de_test)
 
         for imgA in processed_imgs_A: images_A.append(imgA)
         for imgB in processed_imgs_B: images_B.append(imgB)
