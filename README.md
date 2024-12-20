@@ -19,26 +19,39 @@ Journal: [Neural Computing and Applications](https://link.springer.com/journal/5
 
 ## Test
 
-#### Create environment & install required packages
+- Create environment & install required packages
 ```
 conda create -n dpteenv python=3.7
 conda activate dpteenv
 bash install_core_env.sh
 ```
-
-#### Run test
+- Download pre-trained weights from [Hugging Face](https://huggingface.co/tranleanh/dpte-net)
+- Prepare test data
+- Run test
 ```
 python dehaze.py
 ```
-
-#### Evaluate PSNR & SSIM
+- Evaluate PSNR & SSIM
 ```
 python eval_psnr_ssim.py
 ```
 
 ## Train
 
-(will be updated)
+- Create environment & install required packages
+- Prepare dataset (a parent directory containing two sub-folders 'A' and 'B' like below):
+
+```bashrc
+.../path/to/data
+            | A (containing hazy images)
+            | B (containing clean images)
+*** Note: a pair of hazy-clean images must have the same name
+```
+- Configure training parameters in [train.py](https://github.com/tranleanh/dpte-net/blob/main/train.py)
+- Train command
+```
+python train.py
+```
 
 ## Citation
 
