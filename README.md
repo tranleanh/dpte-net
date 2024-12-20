@@ -47,7 +47,7 @@ python eval_psnr_ssim.py
             | B (containing clean images)
 *** Note: a pair of hazy-clean images must have the same name
 ```
-- Configure training parameters in [train.py](https://github.com/tranleanh/dpte-net/blob/main/train.py)
+- Configure training parameters in [train.py](https://github.com/tranleanh/dpte-net/blob/main/train.py#L147)
 - Train command
 ```
 python train.py
