@@ -1,6 +1,7 @@
 # DPTE-Net: Distilled Pooling Transformer Encoder for Efficient Realistic Image Dehazing
 
 [![Weights](https://img.shields.io/badge/Weights-Hugging_Face-gold)](https://huggingface.co/tranleanh/dpte-net)
+[![Preprint](https://img.shields.io/badge/Preprint-arXiv-red)](https://arxiv.org/abs/2412.14220)
 
 The official implementation of the paper "Distilled Pooling Transformer Encoder for Efficient Realistic Image Dehazing".
 
@@ -18,7 +19,22 @@ Journal: [Neural Computing and Applications](https://link.springer.com/journal/5
 
 ## Test
 
-(will be updated)
+#### Create environment & install required packages
+```
+conda create -n dpteenv python=3.7
+conda activate dpteenv
+bash install_core_env.sh
+```
+
+#### Run test
+```
+python dehaze.py
+```
+
+#### Evaluate PSNR & SSIM
+```
+python eval_psnr_ssim.py
+```
 
 ## Train
 
