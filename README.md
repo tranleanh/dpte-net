@@ -55,6 +55,15 @@ python train.py
 
 ## Citation
 
-(will be updated)
+Please cite our paper if you use the data in this repo.
+```bibtex
+@article{tran2024distilled,
+  title={Distilled Pooling Transformer Encoder for Efficient Realistic Image Dehazing},
+  author={Tran, Le-Anh and Park, Dong-Chul},
+  journal={arXiv preprint arXiv:2412.14220},
+  year={2024}
+}
+```
+Have fun.
 
 LA Tran
