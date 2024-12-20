@@ -8,7 +8,8 @@ from core.utils import load_hazy_clean_hint_soft_trans
 from core.losses import wasserstein_loss, perceptual_and_l2_loss, l2_loss, l2_loss_hint, \
                             perceptual_and_transmission_guided_loss, \
                             soft_perceptual_and_transmission_guided_loss, soft_l2_loss_hint
-from core.networks import unet_spp_swish_generator_model, unet_encoder_discriminator_model, gan_model
+
+from core.networks import DPTE_Net, Critic
 from core.networks import img_size
 
 from tensorflow.keras.layers import Input
@@ -19,7 +20,6 @@ from tensorflow.keras.optimizers.legacy import Adam
 BASE_DIR = 'weights/'
 
 
-# Specify weight paths if re-training
 d_weight_path = ''
 g_weight_path = ''
 
@@ -39,7 +39,7 @@ def save_all_weights(d, g, epoch_number, current_loss):
 
 def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
 
-    data = load_hazy_clean_hint_soft_trans('path/to/dataset', n_images)
+    data = load_hazy_clean_hint_soft_trans('path/to/train/data', n_images)
     x_train, y_train, h_train, s_train, g_train = data['A'], data['B'], data['C'], data['D'], data['E']
 
     slabel_decays = []
@@ -53,8 +53,8 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
 
 
     # Define GAN Model
-    g = unet_spp_swish_generator_model()
-    d = unet_encoder_discriminator_model()
+    g = DPTE_Net()
+    d = Critic()
 
     inputs = Input(shape=(img_size,img_size,4))
     guides = Input(shape=(img_size,img_size,1))
@@ -91,7 +91,7 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
             soft_l2_loss_hint(slabel_decay=decays), \
             soft_perceptual_and_transmission_guided_loss(guide=guides, slabel_decay=decays), wasserstein_loss]
 
-    loss_weights = [100, 100, 100, 1]
+    loss_weights = [30, 10, 10, 1]
     d_on_g.compile(optimizer=d_on_g_opt, loss=loss, loss_weights=loss_weights)
     d.trainable = True
 
