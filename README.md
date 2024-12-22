@@ -3,7 +3,7 @@
 [![Weights](https://img.shields.io/badge/Weights-Hugging_Face-gold)](https://huggingface.co/tranleanh/dpte-net)
 [![Preprint](https://img.shields.io/badge/Preprint-arXiv-red)](https://arxiv.org/abs/2412.14220)
 
-The official implementation of the paper "Distilled Pooling Transformer Encoder for Efficient Realistic Image Dehazing".
+The official implementation of the paper [Distilled Pooling Transformer Encoder for Efficient Realistic Image Dehazing](https://arxiv.org/abs/2412.14220).
 
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
 
