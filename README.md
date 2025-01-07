@@ -59,10 +59,12 @@ python train.py
 Please cite our paper if you use the data in this repo.
 ```bibtex
 @article{tran2024distilled,
-  title={Distilled Pooling Transformer Encoder for Efficient Realistic Image Dehazing},
+  title={Distilled pooling transformer encoder for efficient realistic image dehazing},
   author={Tran, Le-Anh and Park, Dong-Chul},
-  journal={arXiv preprint arXiv:2412.14220},
-  year={2024}
+  journal={Neural Computing and Applications},
+  pages={1--19},
+  year={2024},
+  publisher={Springer}
 }
 ```
 Have fun.
