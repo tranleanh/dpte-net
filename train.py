@@ -12,9 +12,9 @@ from core.losses import wasserstein_loss, perceptual_and_l2_loss, l2_loss, l2_lo
 from core.networks import DPTE_Net, Critic
 from core.networks import img_size
 
-from tensorflow.keras.layers import Input
-from tensorflow.keras.models import Model
-from tensorflow.keras.optimizers.legacy import Adam
+from keras.layers import Input
+from keras.models import Model
+from keras.optimizers import Adam
 
 
 BASE_DIR = 'weights/'
@@ -83,6 +83,7 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
 
     d.trainable = True
     d.compile(optimizer=d_opt, loss=wasserstein_loss)
+    # d.compile(optimizer=d_opt, loss=wasserstein_loss, run_eagerly=True)
     d.trainable = False
 
 
@@ -93,6 +94,7 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
 
     loss_weights = [30, 10, 10, 1]
     d_on_g.compile(optimizer=d_on_g_opt, loss=loss, loss_weights=loss_weights)
+    # d_on_g.compile(optimizer=d_on_g_opt, loss=loss, loss_weights=loss_weights, run_eagerly=True)
     d.trainable = True
 
     output_true_batch, output_false_batch = np.ones((batch_size, 1)), -np.ones((batch_size, 1))
@@ -146,7 +148,7 @@ if __name__ == '__main__':
 
     # Train Parameters:
     n_images = 4
-    batch_size = 2
+    batch_size = 1
     log_dir = False
     epoch_num = 200
     critic_updates = 5
