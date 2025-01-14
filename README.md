@@ -8,7 +8,7 @@ The official implementation of the paper [Distilled Pooling Transformer Encoder 
 
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
 
-Journal: [Neural Computing and Applications](https://link.springer.com/journal/521) (Springer)
+Journal: [Neural Computing and Applications](https://link.springer.com/journal/521) (Springer), 2024
 
 ## Introduction
 
@@ -22,9 +22,8 @@ Journal: [Neural Computing and Applications](https://link.springer.com/journal/5
 
 - Create environment & install required packages
 ```
-conda create -n dpteenv python=3.7
-conda activate dpteenv
-bash install_core_env.sh
+conda env create -f environment.yaml
+conda activate dpteenv2
 ```
 - Download pre-trained weights from [Hugging Face](https://huggingface.co/tranleanh/dpte-net)
 - Prepare test data
